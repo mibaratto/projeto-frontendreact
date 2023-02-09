@@ -11,8 +11,8 @@ import { useState } from 'react';
 
 
  function App() {
-   const [minFilter, setMinFilter] = useState("")
-   const [maxFilter, setMaxFilter] = useState("")
+   const [minFilter, setMinFilter] = useState(0)
+   const [maxFilter, setMaxFilter] = useState(0)
    const [searchFilter, setSearchFilter] = useState("")
    const[amount, setAmount] = useState(0)
    const[cart, setCart] = useState([])

@@ -6,8 +6,6 @@ import { useState } from "react"
 
 
 const Home = ({productList, minFilter, maxFilter, searchFilter}) => {
-    console.log(productList)
-
     const [ordination, setOrdination] = useState("")
 
     const handleSelectOrdination = (event) => setOrdination(event.target.value )
@@ -26,6 +24,8 @@ const Home = ({productList, minFilter, maxFilter, searchFilter}) => {
             </HomeHeadStyle>            
             <HomeProductsListStyled>
                 {productList
+                .filter(product => product.value >= minFilter || minFilter === "")
+                .filter(product => product.value <= maxFilter || maxFilter === 0 || maxFilter === "")
                 .filter(product => searchFilter === "" || product.name.toLowerCase().includes(searchFilter.toLowerCase()))
                 .sort((a,b) => ordination === "" || ordination === "asc" && a.name > b.name ? 1 : -1)
                 .sort((a,b) => ordination === "" || ordination === "desc" && a.name > b.name ? -1 : 1)

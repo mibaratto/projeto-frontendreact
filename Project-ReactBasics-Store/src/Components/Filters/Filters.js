@@ -5,8 +5,18 @@ const Filters = ({minFilter, setMinFilter, maxFilter, setMaxFilter, searchFilter
     console.log(searchFilter)
     console.log(minFilter)
 
-    const handleImputMinFilter = (event) => setMinFilter(event.target.value)
-    const handleImputMaxFilter = (event) => setMaxFilter(event.target.value)
+    const handleImputMinFilter = (event) => {
+        if( event.target.value >= 0 ){
+            setMinFilter(event.target.value)
+        }  
+    }
+
+    const handleImputMaxFilter = (event) => {
+        if( event.target.value >= 0){
+            setMaxFilter(event.target.value)
+        }   
+    }
+
     const handleImputSearchFilter = (event) => setSearchFilter(event.target.value)
 
 
