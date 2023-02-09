@@ -2,14 +2,14 @@ import { CardStyle } from "./ProductCardStyle"
 import React from "react"
 
 
-const ProductCard = (props) => {
+const ProductCard = ({name, value, imagem}) => {
 
     return (
         <>
             <CardStyle >
-                <img src={props.imagem}/>
-                <p>{props.name}</p>
-                <p>{props.value}</p>
+                <img src={imagem}/>
+                <p>{name}</p>
+                <p>{value}</p>
             </CardStyle>
         </>
     )

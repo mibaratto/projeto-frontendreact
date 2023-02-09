@@ -10,13 +10,15 @@ import styled from 'styled-components';
 
 
  function App() {
+
   return (
     <>
       < div className="struct">
         <nav>
             <Filters/>
         </nav>
-        <Home/>
+        <Home
+        productList = {productList} />
         <aside>
             <p>Aside</p>
             <Cart/>
