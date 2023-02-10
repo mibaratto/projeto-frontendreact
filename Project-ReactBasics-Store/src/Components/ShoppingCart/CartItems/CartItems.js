@@ -1,9 +1,11 @@
 
-const CartItems = () => {
+const CartItems = ({item}) => {
 
     return (
         <>
-            <p>oi Items </p>
+            <p>{item.name}</p>
+            <p>{item.value}</p>
+
         </>
     )
 }

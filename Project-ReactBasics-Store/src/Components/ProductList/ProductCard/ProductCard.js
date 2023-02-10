@@ -2,11 +2,8 @@ import { CardStyle } from "./ProductCardStyle"
 import React from "react"
 
 
-const ProductCard = ({product, setCart, cart, addProductCart}) => {
+const ProductCard = ({product, addProductCart}) => {
      
-
-
-
     return (
         <>
             <CardStyle >

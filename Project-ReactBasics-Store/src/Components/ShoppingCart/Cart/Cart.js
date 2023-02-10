@@ -2,15 +2,19 @@
 import { RemoveItemButton } from "./CartStyle"
 import CartItems from "../CartItems/CartItems"
 
-const Cart = () => {
+const Cart = ({cart, setCart}) => {
+
+
     return (
         <>
-            <CartItems/>
-            <CartItems/>
-            <CartItems/>
-            <RemoveItemButton>Remove Item </RemoveItemButton>
+            {cart.map((item) => {
+                return (
+                    <CartItems item={item}/>
+                )
+            })
+            }
+            {/* <RemoveItemButton>Remove Item </RemoveItemButton> */}
         </>
     )
 }
-
 export default Cart

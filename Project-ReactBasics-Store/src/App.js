@@ -40,13 +40,14 @@ import { useState } from 'react';
             minFilter = {minFilter}
             maxFilter = {maxFilter}
             searchFilter = {searchFilter}
-            setCart = {setCart}
-            cart = {cart}
             addProductCart = {addProductCart}
           />
         </main>
         <aside>
-            <Cart/>
+            <Cart
+              cart={cart}
+              setCart={setCart}
+            />
         </aside>
       </div>
       <footer>

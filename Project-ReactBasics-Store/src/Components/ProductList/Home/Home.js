@@ -5,7 +5,7 @@ import { useState } from "react"
 
 
 
-const Home = ({productList, minFilter, maxFilter, searchFilter, setCart, cart, addProductCart}) => {
+const Home = ({productList, minFilter, maxFilter, searchFilter, addProductCart}) => {
     const [ordination, setOrdination] = useState("")
 
     const handleSelectOrdination = (event) => setOrdination(event.target.value )
@@ -33,8 +33,6 @@ const Home = ({productList, minFilter, maxFilter, searchFilter, setCart, cart, a
                     return(
                         <ProductCard
                             product = {product}
-                            setCart={setCart}
-                            cart= {cart}
                             addProductCart={addProductCart}
                         />   
                     )}
