@@ -5,7 +5,7 @@ import { useState } from "react"
 
 
 
-const Home = ({productList, minFilter, maxFilter, searchFilter}) => {
+const Home = ({productList, minFilter, maxFilter, searchFilter, setCart, cart, addProductCart}) => {
     const [ordination, setOrdination] = useState("")
 
     const handleSelectOrdination = (event) => setOrdination(event.target.value )
@@ -31,10 +31,11 @@ const Home = ({productList, minFilter, maxFilter, searchFilter}) => {
                 .sort((a,b) => ordination === "" || ordination === "desc" && a.name > b.name ? -1 : 1)
                 .map((product) => {
                     return(
-                        <ProductCard 
-                            name={product.name}
-                            value={product.value}
-                            imagem={product.imageUrl}
+                        <ProductCard
+                            product = {product}
+                            setCart={setCart}
+                            cart= {cart}
+                            addProductCart={addProductCart}
                         />   
                     )}
                 )}

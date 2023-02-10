@@ -1,13 +1,14 @@
+
 import { RemoveItemButton } from "./CartStyle"
+import CartItems from "../CartItems/CartItems"
+
 const Cart = () => {
-
-
-
     return (
         <>
-            <RemoveItemButton>
-                <p> sou um remove</p>
-            </RemoveItemButton>
+            <CartItems/>
+            <CartItems/>
+            <CartItems/>
+            <RemoveItemButton>Remove Item </RemoveItemButton>
         </>
     )
 }
