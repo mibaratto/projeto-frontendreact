@@ -2,8 +2,6 @@ import { DivLabel } from "./FiltersStyle"
 
 
 const Filters = ({minFilter, setMinFilter, maxFilter, setMaxFilter, searchFilter, setSearchFilter}) => {
-    console.log(searchFilter)
-    console.log(minFilter)
 
     const handleImputMinFilter = (event) => {
         if( event.target.value >= 0 ){

@@ -3,11 +3,9 @@ import './App.css';
 import Filters from './Components/Filters/Filters';
 import Home from './Components/ProductList/Home/Home';
 import Cart from './Components/ShoppingCart/Cart/Cart';
-import Items from './Components/ShoppingCart/Items/Items';
 import { productList } from './assents/productList';
 import styled from 'styled-components';
 import { useState } from 'react';
-
 
 
  function App() {
@@ -17,35 +15,64 @@ import { useState } from 'react';
    const[amount, setAmount] = useState(0)
    const[cart, setCart] = useState([])
 
+
+   const addProductCart = (productAdd) => {
+    const existingProduct = cart.find(item => item.id === productAdd.id)
+    if(existingProduct) {
+      setCart(cart.map(item => item.id === productAdd.id ? {...existingProduct, qty: existingProduct.qty + 1} : item))
+    } 
+    else {
+      setCart([...cart, {...productAdd, qty: 1}])
+    }
+
+    setAmount(amount + productAdd.value)
+  }
+
+  const removeItemCart = (itemRemoved) => {
+    const existingProduct = cart.find(item => item.id === itemRemoved.id)
+    if (existingProduct.qty === 1) {
+      setCart(cart.filter((item) => item.id !== itemRemoved.id))
+    }
+    else {
+      setCart(cart.map(item => item.id === itemRemoved.id ? {...existingProduct, qty: existingProduct.qty - 1} : item))
+    }
+
+    setAmount(amount - itemRemoved.value)
+  }
+
   return (
     <>
       < div className="struct">
         <nav>
-            <Filters
+          <Filters
             minFilter = {minFilter}
             setMinFilter = {setMinFilter}
             maxFilter = {maxFilter}
             setMaxFilter = {setMaxFilter}
             searchFilter = {searchFilter}
             setSearchFilter = {setSearchFilter}
-            />
+          />
         </nav>
-        <Home
-        productList = {productList}
-        minFilter = {minFilter}
-        maxFilter = {maxFilter}
-        searchFilter = {searchFilter}
-
-        />
+        <main>
+          <Home
+            productList = {productList}
+            minFilter = {minFilter}
+            maxFilter = {maxFilter}
+            searchFilter = {searchFilter}
+            addProductCart = {addProductCart}
+          />
+        </main>
         <aside>
-            <p>Aside</p>
-            <Cart/>
-            <Items />
+            <Cart
+              cart={cart}
+              setCart={setCart}
+              removeItemCart={removeItemCart}
+              amount={amount}
+            />
         </aside>
       </div>
-
       <footer>
-      <p>footer</p>
+        <p>footer</p>
     </footer>
   </>
   );
