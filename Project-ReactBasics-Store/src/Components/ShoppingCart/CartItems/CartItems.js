@@ -1,12 +1,12 @@
-
+import { CartItemsDiv } from "./CartItemsStyle"
 const CartItems = ({item}) => {
 
     return (
-        <>
-            <p>{item.name}</p>
-            <p>{item.value}</p>
-
-        </>
+        <CartItemsDiv>
+            <h3>Quantidade</h3>
+            <h3>{item.name}</h3>
+            <h3>{item.value}</h3>
+        </CartItemsDiv>
     )
 }
 
