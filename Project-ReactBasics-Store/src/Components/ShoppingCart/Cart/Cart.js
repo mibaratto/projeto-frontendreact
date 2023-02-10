@@ -1,19 +1,24 @@
 
 import { RemoveItemButton } from "./CartStyle"
-import CartItems from "../CartItems/CartItems"
+import CartItem from "../CartItems/CartItems"
 
-const Cart = ({cart, setCart}) => {
+const Cart = ({cart, removeItemCart, amount}) => {
+
 
 
     return (
         <>
             {cart.map((item) => {
                 return (
-                    <CartItems item={item}/>
+                    <CartItem 
+                    item={item}
+                    key={item.id}
+                    removeItemCart={removeItemCart}
+                    />
                 )
             })
             }
-            {/* <RemoveItemButton>Remove Item </RemoveItemButton> */}
+            {amount.toFixed(2)}
         </>
     )
 }

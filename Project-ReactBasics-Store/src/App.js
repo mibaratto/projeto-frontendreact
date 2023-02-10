@@ -16,10 +16,29 @@ import { useState } from 'react';
    const[cart, setCart] = useState([])
 
 
-   const addProductCart = (product) => {
-    setCart([...cart, product])
-    console.log("carrinho", cart)
-}
+   const addProductCart = (productAdd) => {
+    const existingProduct = cart.find(item => item.id === productAdd.id)
+    if(existingProduct) {
+      setCart(cart.map(item => item.id === productAdd.id ? {...existingProduct, qty: existingProduct.qty + 1} : item))
+    } 
+    else {
+      setCart([...cart, {...productAdd, qty: 1}])
+    }
+
+    setAmount(amount + productAdd.value)
+  }
+
+  const removeItemCart = (itemRemoved) => {
+    const existingProduct = cart.find(item => item.id === itemRemoved.id)
+    if (existingProduct.qty === 1) {
+      setCart(cart.filter((item) => item.id !== itemRemoved.id))
+    }
+    else {
+      setCart(cart.map(item => item.id === itemRemoved.id ? {...existingProduct, qty: existingProduct.qty - 1} : item))
+    }
+
+    setAmount(amount - itemRemoved.value)
+  }
 
   return (
     <>
@@ -47,6 +66,8 @@ import { useState } from 'react';
             <Cart
               cart={cart}
               setCart={setCart}
+              removeItemCart={removeItemCart}
+              amount={amount}
             />
         </aside>
       </div>

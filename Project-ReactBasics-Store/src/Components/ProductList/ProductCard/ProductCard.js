@@ -9,7 +9,7 @@ const ProductCard = ({product, addProductCart}) => {
             <CardStyle >
                 <img src={product.imageUrl}/>
                 <p>{product.name}</p>
-                <p>{product.value}</p>
+                <p>${product.value.toFixed(2)}</p>
                 <button onClick={() => addProductCart(product)}>Add to cart</button>
             </CardStyle>
         </>
