@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .struct{
   display: flex;
@@ -10,33 +11,25 @@
 
 }
 nav{
+  background-color: rgb(236, 235, 235);
   display: flex;
   flex-direction: column;
-  background-color: aquamarine;
-  border: 1px solid coral;
-  flex-basis: 200px;
   padding: 1vw;
-
+  flex-grow: 1;
 }
 
-  /* flex-grow: 1 */
-
-/* main{
+main{
   display: flex;
   min-height: 80%;
-  background-color: rgb(127, 185, 255);
-  border: 1px solid blue;
-  flex-grow: 2
-
-} */
-aside{
-  background-color: rgb(212, 127, 255);
-  border: 1px solid rgb(32, 0, 128);
-  flex-grow: 1
+  flex-grow: 2;
 }
 
-footer{
-  background-color: rgb(255, 127, 229);
-  border: 1px solid rgb(128, 0, 128)
+aside{
+  background-color: rgb(236, 235, 235);
+  flex-grow: 1;
+  flex-basis: 300px;
+}
 
+button{
+  padding: 0.2rem;
 }

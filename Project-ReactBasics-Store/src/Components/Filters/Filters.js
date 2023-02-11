@@ -1,7 +1,7 @@
 import { DivLabel } from "./FiltersStyle"
 
 
-const Filters = ({minFilter, setMinFilter, maxFilter, setMaxFilter, searchFilter, setSearchFilter}) => {
+const Filters = ({minFilter, setMinFilter, maxFilter, setMaxFilter, searchFilter, setSearchFilter,cleanFilter}) => {
 
     const handleImputMinFilter = (event) => {
         if( event.target.value >= 0 ){
@@ -38,6 +38,11 @@ const Filters = ({minFilter, setMinFilter, maxFilter, setMaxFilter, searchFilter
                 <DivLabel>
                 <div><label>Busca por nome:</label></div>
                 <div><input type="text" value={searchFilter} onChange={handleImputSearchFilter} /></div>
+                </DivLabel>
+            </div>
+            <div>
+                <DivLabel>
+                <button onClick={() => cleanFilter()}>Limpar Filtros</button>
                 </DivLabel>
             </div>
         </div>

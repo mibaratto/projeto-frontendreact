@@ -40,6 +40,12 @@ import { useState } from 'react';
     setAmount(amount - itemRemoved.value)
   }
 
+  const cleanFilter = () => {
+    setMaxFilter(0)
+    setMinFilter(0)
+    setSearchFilter("")
+  }
+
   return (
     <>
       < div className="struct">
@@ -51,6 +57,7 @@ import { useState } from 'react';
             setMaxFilter = {setMaxFilter}
             searchFilter = {searchFilter}
             setSearchFilter = {setSearchFilter}
+            cleanFilter={cleanFilter}
           />
         </nav>
         <main>
@@ -71,9 +78,6 @@ import { useState } from 'react';
             />
         </aside>
       </div>
-      <footer>
-        <p>footer</p>
-    </footer>
   </>
   );
 }

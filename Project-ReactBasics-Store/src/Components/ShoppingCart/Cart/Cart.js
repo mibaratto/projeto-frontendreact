@@ -1,13 +1,14 @@
 
-import { RemoveItemButton } from "./CartStyle"
 import CartItem from "../CartItems/CartItems"
+import { CartAside } from "./CartStyle"
 
 const Cart = ({cart, removeItemCart, amount}) => {
 
 
 
     return (
-        <>
+        <CartAside>
+            <div>{cart.length === 0 && <div>Carrinho está vazio</div> }</div> 
             {cart.map((item) => {
                 return (
                     <CartItem 
@@ -18,8 +19,9 @@ const Cart = ({cart, removeItemCart, amount}) => {
                 )
             })
             }
-            {amount.toFixed(2)}
-        </>
+            <hr></hr>
+            <div>Valor total: {amount.toFixed(2)}</div>
+        </CartAside>
     )
 }
 export default Cart

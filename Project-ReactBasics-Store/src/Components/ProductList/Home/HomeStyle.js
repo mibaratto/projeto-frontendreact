@@ -3,23 +3,25 @@ import styled from "styled-components";
 export const HomeMainStyled = styled.main `
   display: flex;
   flex-direction: column;
-  background-color: aquamarine;
-  border: 1px solid coral;
   flex-basis: 200px;
   padding: 1vw;
   flex-grow: 5;
+  /* border: 1px solid green; */
+
+
 `
 
 export const HomeProductsListStyled = styled.div`
     display:flex;
-    border: 1px solid coral;
-    column-gap: 1vw;
+    flex-wrap: wrap;
+    /* border: 1px solid green; */
+    gap: 1rem;
     
 `
 
 export const HomeHeadStyle = styled.div`
     display:flex;
-    border: 1px solid coral;
     justify-content: space-between;
+    padding: 1rem;
 
 `
