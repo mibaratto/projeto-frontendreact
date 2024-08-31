@@ -1,6 +1,6 @@
 # Basic e-commerce
 
-This is the introductory project to the fundamentals of React. Here, we will practice the structure of what we consider the React framework. The goal is to have it work like the front-end of an E-Commerce
+This is the introductory project to the fundamentals of React.
 
 - JSX
 - Components
