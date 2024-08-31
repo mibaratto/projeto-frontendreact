@@ -30,23 +30,23 @@ The project consists in 3 main parts:
 
 ### Requirements List
 
-- Home (Product List)
-The user must be able to view a list of products
-The user must be able to view product data (name, price and image)
-The user must be able to add a product to the cart
+# Home (Product List)
+- The user must be able to view a list of products
+- The user must be able to view product data (name, price and image)
+- The user must be able to add a product to the cart
 
-- Cart
-The user must be able to view the added products
-The user must be able to view the correct quantity of each product
-The user must be able to remove items from the cart
-The user must be able to correctly see the total value of their purchase
-When the page is refreshed, the items must remain in the cart
+# Cart
+- The user must be able to view the added products
+- The user must be able to view the correct quantity of each product
+- The user must be able to remove items from the cart
+- The user must be able to correctly see the total value of their purchase
+- When the page is refreshed, the items must remain in the cart
 
-- Filters and Sorting
-The user must be able to filter items by minimum price
-The user must be able to filter items by maximum price
-The user must be able to perform a search by name
-The user must be able to sort items in ascending or descending order
-The user must be able to add filters, search and sort simultaneously
-The user must be able to return to the view without filters
+# Filters and Sorting
+- The user must be able to filter items by minimum price
+- The user must be able to filter items by maximum price
+- The user must be able to perform a search by name
+- The user must be able to sort items in ascending or descending order
+- The user must be able to add filters, search and sort simultaneously
+- The user must be able to return to the view without filters
     
