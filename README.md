@@ -12,7 +12,7 @@ This is the introductory project to the fundamentals of React.
 - localStorage
 
 # Requirements
-The project will consist of 3 main parts:
+The project consists in 3 main parts:
 
 1. Home
 - Showing all products
